@@ -37,9 +37,7 @@ export default class Rob extends ChatCommandHandler {
     if (typeof amount === 'string') {
       context.resetCooldown()
       return amount
-    }
-
-    if (amount <= 0) {
+    } else if (amount <= 0) {
       context.resetCooldown()
       return `${context.message.user.displayName()}, amount must be at least 1!`
     }
